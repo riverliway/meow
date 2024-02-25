@@ -15,3 +15,13 @@ The HCB API provides the [following information](https://hcb.hackclub.com/docs/a
 `tags.label` **string** - the label for the current tags on this transaction (target for prediction)
 
 In addition, there are several optional fields for each payment type. Each of them have a `memo` field.
+
+
+
+## Architecture Ideas
+
+First embed the memo and check to see if there is another embedded memo with a tag. If so, return that tag.
+
+We can use weak supervision to run the untagged transactions through a generative LLM.
+
+We can use strong supervision with the tagged transactions to train a custom model from scratch.
