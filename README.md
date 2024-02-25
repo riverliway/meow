@@ -25,3 +25,8 @@ First embed the memo and check to see if there is another embedded memo with a t
 We can use weak supervision to run the untagged transactions through a generative LLM.
 
 We can use strong supervision with the tagged transactions to train a custom model from scratch.
+
+### Custom Model:
+
+* Log10 transform the `amount_cents` so the model is more sensitive to the magnitude
+* Embed the memo
